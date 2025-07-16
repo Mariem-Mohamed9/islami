@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:islami/app_theme.dart';
 import 'package:islami/home_screen.dart';
+import 'package:islami/onboarding_screen.dart';
 
 void main() {
   runApp(IslaimApp());
@@ -13,9 +15,13 @@ class IslaimApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        HomeScreen.routeName: (_) => HomeScreen(),
+        OnboardingScreen.routeName: (context) => OnboardingScreen(),
+        '/home': (context) => HomeScreen(),
       },
-      initialRoute: HomeScreen.routeName,
+      theme:AppTheme.LightTheme ,
+      darkTheme:AppTheme.darkTheme ,
+      themeMode:ThemeMode.dark ,
+      initialRoute: OnboardingScreen.routeName,
     );
   }
 }
